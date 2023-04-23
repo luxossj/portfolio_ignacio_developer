@@ -1,0 +1,33 @@
+
+p {
+    text-transform: uppercase;
+    font-size: 80px;
+}
+
+em {
+    text-decoration: underline;
+    font-size: 25px;
+    color: #0029FF;
+}
+
+
+.titulo{
+    text-align: center;
+    font-family: 'Inter' sans-serif;
+
+    color: #0029FF;
+    font-weight: bolder;
+
+    font-size: 50px;
+}
+  
+spon {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+  }
+  
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
