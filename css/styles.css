@@ -1,4 +1,6 @@
-
+#copy-email {
+    text-decoration: underline;
+}
 p {
     text-transform: uppercase;
     font-size: 80px;

@@ -1,3 +1,4 @@
+// script titulo typing efect
 document.addEventListener('DOMContentLoaded',function(event){
     // array with texts to type in typewriter
     var dataText = [ "Luis Ignacio.", "Creator.", "Web Developer.", "Full Stack."];
@@ -40,3 +41,38 @@ document.addEventListener('DOMContentLoaded',function(event){
     // start the text animation
     StartTextAnimation(0);
   });
+
+const copyEmailBtn = document.querySelector('#copy-email');
+
+copyEmailBtn.addEventListener('click', () => {
+  const email = 'luisignaciocontacto@gmail.com';
+  
+  // Copiar el email al portapapeles
+  navigator.clipboard.writeText(email)
+    .then(() => {
+      // Cambiar el texto del botón
+      copyEmailBtn.innerText = 'Email copied!';
+    })
+    .catch(err => {
+      console.error('No se pudo copiar el email: ', err);
+    });
+});
+
+const downloadFileBtn = document.querySelector('#download-file');
+
+downloadFileBtn.addEventListener('click', () => {
+  const fileUrl = 'img/world_icon.png';
+  
+  // Crear un enlace temporal para descargar el archivo
+  const link = document.createElement('a');
+  link.href = fileUrl;
+  link.download = 'world_icon.png';
+  
+  // Añadir el enlace al DOM y hacer clic en él
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  // Cambiar el texto del botón
+  downloadFileBtn.innerText = 'Descarga completa!';
+});
