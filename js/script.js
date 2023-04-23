@@ -67,6 +67,8 @@ downloadFileBtn.addEventListener('click', () => {
   const link = document.createElement('a');
   link.href = fileUrl;
   link.download = 'world_icon.png';
+
+  // texto
   
   // Añadir el enlace al DOM y hacer clic en él
   document.body.appendChild(link);
