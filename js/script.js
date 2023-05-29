@@ -40,43 +40,58 @@ document.addEventListener('DOMContentLoaded',function(event){
     }
     // start the text animation
     StartTextAnimation(0);
+
+    const copyEmailBtn = document.querySelector('#copy-email');
+
+    copyEmailBtn.addEventListener('click', () => {
+      const email = 'luisignaciocontacto@gmail.com';
+      
+      // Copiar el email al portapapeles
+      navigator.clipboard.writeText(email)
+        .then(() => {
+          // Cambiar el texto del botón
+          copyEmailBtn.innerText = 'Email copied!';
+        })
+        .catch(err => {
+          console.error('No se pudo copiar el email: ', err);
+        });
+    });
+
+    const downloadFileBtn = document.querySelector('#download-file');
+
+    downloadFileBtn.addEventListener('click', () => {
+      const fileUrl = 'img/world_icon.png';
+      
+      // Crear un enlace temporal para descargar el archivo
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.download = 'world_icon.png';
+
+      // texto
+      
+      // Añadir el enlace al DOM y hacer clic en él
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Cambiar el texto del botón
+      downloadFileBtn.innerText = 'Descarga completa!';
+    });
+      
+
+
   });
 
-const copyEmailBtn = document.querySelector('#copy-email');
-
-copyEmailBtn.addEventListener('click', () => {
-  const email = 'luisignaciocontacto@gmail.com';
-  
-  // Copiar el email al portapapeles
-  navigator.clipboard.writeText(email)
-    .then(() => {
-      // Cambiar el texto del botón
-      copyEmailBtn.innerText = 'Email copied!';
-    })
-    .catch(err => {
-      console.error('No se pudo copiar el email: ', err);
-    });
-});
-
-const downloadFileBtn = document.querySelector('#download-file');
-
-downloadFileBtn.addEventListener('click', () => {
-  const fileUrl = 'img/world_icon.png';
-  
-  // Crear un enlace temporal para descargar el archivo
-  const link = document.createElement('a');
-  link.href = fileUrl;
-  link.download = 'world_icon.png';
-
-  // texto
-  
-  // Añadir el enlace al DOM y hacer clic en él
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  
-  // Cambiar el texto del botón
-  downloadFileBtn.innerText = 'Descarga completa!';
-});
 
 
+function cargarContenido(num) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("parrafo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "social_media.html", true);
+  xhttp.send();
+};
+cargarContenido();
