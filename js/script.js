@@ -1,7 +1,7 @@
 // script titulo typing efect
 document.addEventListener('DOMContentLoaded',function(event){
     // array with texts to type in typewriter
-    var dataText = [ "Luis Ignacio.", "Creator.", "Web Developer.", "Full Stack."];
+    var dataText = [ "Luis Ignacio.", "Web Developer.", "Full Stack."];
     
     // type one text in the typwriter
     // keeps calling itself until the text is finished
