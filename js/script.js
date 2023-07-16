@@ -1,7 +1,7 @@
 // script titulo typing efect
 document.addEventListener('DOMContentLoaded',function(event){
     // array with texts to type in typewriter
-    var dataText = [ "Luis Ignacio.", "Web Developer.", "Full Stack."];
+    var dataText = [ "Luis Ignacio.", "Full Stack.", "Back-End.", "Front-End.", "Django Expert.","PL-SQL Analylistic.","Angular Focus Design."];
     
     // type one text in the typwriter
     // keeps calling itself until the text is finished
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',function(event){
       // chekc if text isn't finished yet
       if (i < (text.length)) {
         // add next character to h1
-       document.querySelector("p").innerHTML = text.substring(0, i+1) +'<spon aria-hidden="true"></spon>';
+       document.querySelector("#titulo").innerHTML = text.substring(0, i+1) +'<spon aria-hidden="true"></spon>';
   
         // wait for a while and call this function again for next character
         setTimeout(function() {
