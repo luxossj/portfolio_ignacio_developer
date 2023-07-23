@@ -95,3 +95,57 @@ function cargarContenido(num) {
   xhttp.send();
 };
 cargarContenido();
+
+
+
+$(document).ready(function() {
+
+  $.validator.setDefaults({
+    messages: {
+        required: 'Este campo es obligatorio',
+    },
+  });
+  $("#form").validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 3
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      password: {
+        required: true,
+        minlength: 6
+      }
+    },
+    messages: {
+      name: {
+        required: "Please enter your name.",
+        minlength: "Name must be at least 3 characters long."
+      },
+      email: {
+        required: "Please enter your email address.",
+        email: "Please enter a valid email address."
+      },
+      password: {
+        required: "Please enter a password.",
+        minlength: "Password must be at least 6 characters long."
+      }
+    },
+
+    errorPlacement: function(error, element) {
+      error.insertAfter(element); // Inserta el mensaje de error después del elemento
+      error.addClass('div invalid-feedback fw-bolder'); // Aplica una clase al mensaje de error
+      //element.after('<br>'); 
+  },
+    submitHandler: function(form) {
+      // Aquí puedes colocar el código para enviar el formulario si es válido
+      // Por ejemplo, puedes usar AJAX para enviar los datos a un servidor
+      // y mostrar un mensaje de éxito después de enviar los datos.
+      alert("Formulario válido. Enviando datos...");
+      form.submit(); // Esto enviará el formulario si es válido
+    }
+  });
+});
