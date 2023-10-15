@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded',function(event){
   });
 
 
-
 function cargarContenido(num) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -95,8 +94,6 @@ function cargarContenido(num) {
   xhttp.send();
 };
 cargarContenido();
-
-
 
 $(document).ready(function() {
 
@@ -148,4 +145,27 @@ $(document).ready(function() {
       form.submit(); // Esto enviará el formulario si es válido
     }
   });
+
+
 });
+
+document.getElementById("download-file").addEventListener(
+  "click", function() {
+
+    const fileUrl = "./analista_programador_luis_barboza.pdf";
+    // Crear un enlace oculto
+    var link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "cv_vitae.pdf";  // Nombre de archivo para la descarga
+    link.style.display = "none";
+
+    // Agregar el enlace al documento
+    document.body.appendChild(link);
+
+    // Simular un clic en el enlace para iniciar la descarga
+    link.click();
+
+    // Eliminar el enlace después de la descarga
+    document.body.removeChild(link);
+  }
+)
