@@ -112,7 +112,7 @@ $(document).ready(function() {
         required: true,
         email: true
       },
-      password: {
+      message: {
         required: true,
         minlength: 6
       }
@@ -126,9 +126,9 @@ $(document).ready(function() {
         required: "Please enter your email address.",
         email: "Please enter a valid email address."
       },
-      password: {
-        required: "Please enter a password.",
-        minlength: "Password must be at least 6 characters long."
+      message: {
+        required: "Please enter a message.",
+        minlength: "Message must be at least 6 characters long."
       }
     },
 
