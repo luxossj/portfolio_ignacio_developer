@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 {% load static %}
-=======
->>>>>>> django
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
 
@@ -18,19 +14,11 @@
     {% block titulo %}
 
     {% endblock titulo %}
-=======
-    <!-- <link rel="icon" href="{% static 'core/img/icon.png' %}" /> -->
-    <title>
-    {% block stylesheet %}
-
-    {% endblock stylesheet %}
->>>>>>> django
     </title>
 
 
 </head>
 <body>
-<<<<<<< HEAD
 
     <header id="landing-header" class="py-6 px-10 flex items-center fixed top-0 w-full justify-between">
         <!-- nav izquierda -->
@@ -46,10 +34,10 @@
         <!-- nav derecha -->
         <nav >
             <ul class="flex flex-grow basis-0 [&>li>a]:text-current   [&>li>a]:duration-500 [&>li>a]:inline-block [&>li>a]:px-8 [&>li>a]:py-3">
-                <li><a href="" class="font-medium">Home</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">About Me</a></li>
+                <li><a href="{% url 'index' %}" class="font-medium">Home</a></li>
+                <li><a href="{% url 'projects' %}">Projects</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'about' %}">About Me</a></li>
             </ul>
 
         </nav>
@@ -58,7 +46,11 @@
         class="absolute bg-black/10 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-500 ease-in-out opacity-0 -z-10"
         ></div>
     </header>
-
+    
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
     <script src="{% static 'core/js/script.js' %}"></script>
 
     {% block script %}
@@ -66,8 +58,4 @@
     {% endblock script %}
 </body>
 
-=======
-    
-</body>
->>>>>>> django
 </html>
