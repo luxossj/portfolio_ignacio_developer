@@ -89,8 +89,11 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        # default='postgres://portfolio_ignacio_user:0EqjduvDlAmGRCYuD7V70u6lGYCuceCB@dpg-coksa7ed3nmc739koo7g-a/portfolio_ignacio',
+        
+        #default='postgresql://postgres:postgres@localhost:5432/mysite',
+        # default='postgresql://postgres:postgres@localhost:5432/mysite',
+        
+        default='postgres://portfolio_ignacio_user:0EqjduvDlAmGRCYuD7V70u6lGYCuceCB@dpg-coksa7ed3nmc739koo7g-a/portfolio_ignacio',
         conn_max_age=600
     )
 }
