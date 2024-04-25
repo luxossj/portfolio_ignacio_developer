@@ -82,6 +82,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 
+
+
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -93,7 +96,7 @@ DATABASES = {
         #default='postgresql://postgres:postgres@localhost:5432/mysite',
         # default='postgresql://postgres:postgres@localhost:5432/mysite',
         
-        default='postgres://portfolio_ignacio_user:0EqjduvDlAmGRCYuD7V70u6lGYCuceCB@dpg-coksa7ed3nmc739koo7g-a/portfolio_ignacio',
+        default='postgres://portfolio_ignacio_user:0EqjduvDlAmGRCYuD7V70u6lGYCuceCB@dpg-coksa7ed3nmc739koo7g-a.virginia-postgres.render.com/portfolio_ignacio',
         conn_max_age=600
     )
 }
