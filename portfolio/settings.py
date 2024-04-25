@@ -32,8 +32,8 @@ DEBUG = 'RENDER' not in os.environ
 
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-# ALLOWED_HOSTS = ['portfolio-ignacio-developer.onrender.com','ignaciodeveloper.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['portfolio-ignacio-developer.onrender.com','ignaciodeveloper.com']
+# ALLOWED_HOSTS = []
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
