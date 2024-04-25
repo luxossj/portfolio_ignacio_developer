@@ -92,9 +92,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
     'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost/postgres',
-        conn_max_age=600
+        default=os.getenv('DATABASE_URL')
     )
 }
 
