@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="{% block description %}Explora el portafolio de un Desarrollador Full Stack con experiencia en Django, Angular, Ionic, Java, HTML/CSS y JavaScript. Experto en desarrollo web/móvil y gestión de datos PL/SQL. Descubre soluciones creativas y eficientes para tus necesidades tecnológicas aquí.{% endblock description %}">
+    <meta name="keywords" content="{% block keyword %}Desarrollo web, Desarrollo móvil, Django, Angular, HTML, CSS, JavaScript{% endblock keyword %}">
+    <meta name="author" content="{% block author %}Luis Ignacio Web Developer{% endblock author %}">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
+
+    {% block stylesheet %}
+    {% endblock stylesheet %}
+    <!-- <link rel="icon" href="{% static 'core/img/icon.png' %}" /> -->
+    <title>
+    {% block titulo %}
+
+    {% endblock titulo %}
+    </title>
+
+
+</head>
+<body>
+
+    <header id="landing-header" class="py-6 px-10 flex items-center fixed top-0 w-full justify-between">
+        <!-- nav izquierda -->
+        <div class="font-bold text-xl flex flex-grow basis-0 px-8 py-2">
+            <h1><a href="">IgnacioDeveloper.</a></h1>
+        </div>
+        <!-- nav centro -->
+        <nav >
+
+
+        </nav>
+
+        <!-- nav derecha -->
+        <nav >
+            <ul class="flex flex-grow basis-0 [&>li>a]:text-current   [&>li>a]:duration-500 [&>li>a]:inline-block [&>li>a]:px-8 [&>li>a]:py-3">
+                <li><a href="{% url 'index' %}" class="font-medium">Home</a></li>
+                {% comment %} <li><a href="{% url 'projects' %}">Projects</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'about' %}">About Me</a></li> {% endcomment %}
+            </ul>
+
+        </nav>
+        <div
+        id="menu-backdrop"
+        class="absolute bg-black/10 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-500 ease-in-out opacity-0 -z-10"
+        ></div>
+    </header>
+    
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="{% static 'core/js/script.js' %}"></script>
+
+    {% block script %}
+
+    {% endblock script %}
+</body>
+
+</html>
