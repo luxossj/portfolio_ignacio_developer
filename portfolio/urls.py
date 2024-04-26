@@ -1,5 +1,5 @@
 """
-URL configuration for drfsimplecrud project.
+URL configuration for portfolio project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -21,7 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('projects.urls'))
+    path('', include('core.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
