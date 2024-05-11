@@ -9,8 +9,13 @@
     <meta name="keywords" content="{% block keyword %}Desarrollo web, Desarrollo móvil, Django, Angular, HTML, CSS, JavaScript{% endblock keyword %}">
     <meta name="author" content="{% block author %}Luis Ignacio Web Developer{% endblock author %}">
     <script src="https://cdn.tailwindcss.com/"></script>
-
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
+
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'core/slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/slick/slick-theme.css' %}"/>
+
+
 
     {% block stylesheet %}
     {% endblock stylesheet %}
@@ -81,7 +86,7 @@
 
 
   <div class="mt-20"> <!-- Ajusta el margen superior para dejar espacio para el navbar -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container text-center justify-content-center mx-auto px-4 sm:px-6 lg:px-8">
         {% block content %}
         {% endblock %}
     </div>
@@ -90,10 +95,8 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-    <script src="{% static 'core/js/script.js' %}"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const menuButton = document.querySelector("[data-collapse-toggle='navbar-sticky']");
@@ -103,10 +106,18 @@
                 navbarMenu.classList.toggle("hidden");
             });
         });
-    </script>
-        {% block script %}
 
-        {% endblock script %}
+
+    </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'core/slick/slick.min.js' %}"></script>
+
+    <script src="{% static 'core/js/script.js' %}"></script>
+
+    {% block script %}
+
+    {% endblock script %}
 
 </body>
 

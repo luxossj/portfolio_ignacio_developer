@@ -2,3 +2,7 @@ db.sqlite3
 venv
 test.html
 __pycache__
+portfolio/settings.py
+requirements.txt
+
+/staticfiles/

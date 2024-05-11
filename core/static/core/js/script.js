@@ -89,3 +89,30 @@ document.getElementById("download-file").addEventListener(
     // start the text animation
     StartTextAnimation(0);
 
+
+
+
+
+
+// carrusel
+$('.carrusel-brand').slick({
+  autoplay: true,
+  autoplaySpeed: 0, // Configura autoplaySpeed a 0 para deshabilitar la pausa entre diapositivas
+  speed: 4000, // Ajusta la velocidad de transición entre diapositivas
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  cssEase: 'linear',
+});
+
+// autoplay: true,
+//     autoplaySpeed: 0, // Desactivamos el autoplaySpeed para evitar pausas
+//     speed: 500, // Velocidad de transición entre diapositivas
+//     infinite: true, // Hacemos que el carrusel sea infinito
+//     slidesToShow: 4,
+//     slidesToScroll: 1,
+//     cssEase: 'linear', // Configuramos la transición como lineal para un desplazamiento más uniforme
+//     variableWidth: true, // Permitimos que las diapositivas tengan un ancho variable para un movimiento más continuo
+//     centerMode: true, // Centramos la diapositiva activa
+//     arrows: false, // Desactivamos las flechas de navegación si no son necesarias
+//     pauseOnHover: false, // Evitamos la pausa al pasar el mouse sobre el carrusel
