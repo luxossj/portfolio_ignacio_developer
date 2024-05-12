@@ -103,6 +103,34 @@ $('.carrusel-brand').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
   cssEase: 'linear',
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
 });
 
 // autoplay: true,
@@ -116,3 +144,76 @@ $('.carrusel-brand').slick({
 //     centerMode: true, // Centramos la diapositiva activa
 //     arrows: false, // Desactivamos las flechas de navegación si no son necesarias
 //     pauseOnHover: false, // Evitamos la pausa al pasar el mouse sobre el carrusel
+
+
+
+$('.card-work').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
+$(document).ready(function() {
+  $("#formulario1").validate({
+    rules: {
+      name: {
+        required: true
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      descripcion: {
+        required: true
+      }
+    },
+    messages: {
+      name: {
+        required: "Please enter your name or company"
+      },
+      email: {
+        required: "Please enter your email address",
+        email: "Please enter a valid email address"
+      },
+      descripcion: {
+        required: "Please enter your message"
+      }
+    },
+    errorPlacement: function(error, element) {
+      // Coloca el mensaje de error después del elemento de entrada
+      error.insertAfter(element);
+      // Aplica el estilo al mensaje de error
+      error.addClass("text-red-700 font-bold");
+    }
+  });
+});
