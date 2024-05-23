@@ -77,15 +77,7 @@ Ignacio | Desarrollador Web Full Stack
             Experiencie on Web Development & Data Analisis Data Bases
         </div>
       </div> -->
-      {% if message %}
-      <div class="" role="alert">
 
-          <h1 class="text-4xl font-bold tracking-tight text-green-800 sm:text-6xl"> {{ message }}</h1>
-
-      </div>
-
-
-      {% endif %}
       <div class="text-center">
 
 
@@ -164,7 +156,6 @@ Ignacio | Desarrollador Web Full Stack
 
 </div> 
 
-{% comment %} {% include "core/carrusel.html" %} {% endcomment %}
 
 
 
@@ -312,7 +303,6 @@ Ignacio | Desarrollador Web Full Stack
 
 
 
-
 <div id="formulario" class="formulario  max-w-6xl mx-auto">
   <section class="bg-white">
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -320,7 +310,7 @@ Ignacio | Desarrollador Web Full Stack
       <h1 class="font-sans mb-4 text-5xl font-semibold tracking-tight text-center text-gray-900">Empecemos a Trabajar juntos!</h1>
       <p class="pt-4 mb-8 text-xl lg:mb-16 text-center sm:text-xl">Te ayudo a posicionarte en la Web y generar más Ventas</p>
 
-      <form method="POST" id="formulario1" class="space-y-8">
+      <form method="POST" id="formulario1" class="space-y-8" novalidate>
         {% csrf_token %}
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

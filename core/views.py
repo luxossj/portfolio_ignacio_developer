@@ -1,6 +1,8 @@
 
+# views.py
+
 from django.core.mail import send_mail
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm
 
@@ -15,12 +17,14 @@ def index(request):
             # Envía el correo electrónico
             send_mail(
                 f'Nuevo mensaje de {name}',  # Asunto
-                descripcion,  # Mensaje
+                f'Correo: {email}, Mensaje: {descripcion}',  # Mensaje
                 email,  # De
                 ['luisignaciocontacto@gmail.com'],  # A
                 fail_silently=False,
             )
             message = "Gracias por contactarnos."
+
+            return redirect('mensaje_enviado')
     else:
         form = ContactForm()
 
@@ -29,6 +33,9 @@ def index(request):
 
 def projects(request):
     return render(request, 'core/projects.html')
+
+def mensaje_enviado(request):
+    return render(request, 'core/mensaje_enviado.html')
 
 def contact(request):
     return render(request, 'core/contact.html')
